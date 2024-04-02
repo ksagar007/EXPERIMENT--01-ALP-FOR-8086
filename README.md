@@ -1,11 +1,8 @@
-# EXPERIMENT--01-ALP-FOR-8086
+```
 Name : K SAGAR KRISHNA
 Roll no : 212222110037
-Date of experiment : 20-02-2024
-
-
-
-
+```
+# EXPERIMENT 01- ARITHMETIC OPERATION AND LOGICAL OPERATION IN 8086
 
 ## Aim: To Write and execute ALP on fundamental arithmetic and logical operations
 ## Components required: 8086  emulator 
@@ -77,74 +74,99 @@ Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as
 
 ## Programs for arithmetic  operations
 
-## Addition  of 8 bit ALP 
-```
+## Addition  
+```python
 org 100h
-
-mov al,02h;
-mov bl,04h;
-add al,bl;
-mov [2432h],al;
-
-
-ret
-
-```
-
-
-
-## Output  
-![ex1pmc](https://github.com/ksagar007/EXPERIMENT--01-ALP-FOR-8086/assets/121165786/ceb3cdca-306a-4aa2-84ce-a453773ec2f5)
-
- 
-## Subtraction   of 8 bit numbers  ALP 
-```
-org 100h
-
-mov al,04h;
-mov bl,02h;
-sub al,bl;
-mov cl,al;
-
-
+mov al,024h;
+mov bl,al;
+add bl,al;
+mov [0123h],bl;
 ret
 ```
- 
+
 ## Output  
-
-![ex1subpmc](https://github.com/ksagar007/EXPERIMENT--01-ALP-FOR-8086/assets/121165786/de3a714b-be71-4884-8614-0de5da228be0)
-## Multiplication alp 
-```
+ ![OUTPUT](add.png)
+## Subtraction 
+```python
 org 100h
-
-mov cl,00h;
-mov al,12h;
-mov bl,02h;
-mul bl; 
-hlt;
+mov al,024h;
+mov bl,[0123h+02];
+sub bl,al;
+mov [0123h+04],bl;
+ret
+```
+## Output
+![OUTPUT](sub.png)
+## Multiplication
+```python
+org 100h
+mov bx,0015h;
+mov al,[bx];
+mul bl;
+mov [0015h+04],al;
+ret
 ```
  ## Output  
- ![ex1mulpmc](https://github.com/ksagar007/EXPERIMENT--01-ALP-FOR-8086/assets/121165786/4d9c1b47-b95a-47dd-8555-1f73f8ff6e7b)
-## Division alp
-```
+![OUTPUT](mul.png)
+
+## Division
+```python
 org 100h
-
-mov cl,00h;
-mov al,40h;
-mov bl,10h;
-div bl; 
+mov bx,0040h;
+mov al,[bx+02];
+div bl;
+mov [0040h+04],al;
 ret
-
 ```
-
 ## Output  
+![OUTPUT](div.png)
+## Programs for logical  operations
 
-![ex1divpmc](https://github.com/ksagar007/EXPERIMENT--01-ALP-FOR-8086/assets/121165786/81bd2af2-5c4b-492f-89c2-bcea15901c2b)
-
-
+## AND
+```python
+org 100h
+mov bx,1000h;
+and bx,1111h;
+mov [0040h+02],bx;
+ret
+```
+## Output 
+![OUTPUT](and.png)
+## OR
+```python
+org 100h
+mov ax,[0040h+06];
+mov bx,1000h;
+or ax,bx;
+mov [0040h+02],ax;
+ret
+```
+## Output
+![OUTPUT](or.png)
+## NOT
+```python
+org 100h
+mov bx,0040h;
+mov ax,[bx]; 
+not al;
+mov [0040h+04],ax;
+ret
+```
+## Output
+![OUTPUT](not.png)
+## XOR
+```python
+org 100h
+mov bx,0040h;
+mov ax,[bx]; 
+xor ax,bx;
+mov [0040h+04],ax;
+ret
+```
+## Output
+![OUTPUT](xor.png)
 ## Result :
-Thus, a program is executed on ALP for the fundamental arithmetic and logical operations.
- 
+Thus, ALP for fundamental arithmetic and logical operations are executed successfully.
 
 
 
